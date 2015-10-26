@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Douzie</title>
+  <title>Douzie - Funny Jokes</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	<header>
+		<div class="col-xs-12">
+			<%= link_to root_path, :class => 'logo' do %>
+				<div class="douzie-logo">
+  					<br />
+  					: ]
+				</div>
+        <div class="logo-text">
+          Douzie
+          <br />
+          <span class="slogan">
+            funny jokes live here
+          </span>
+        </div>
+			<% end %>
+		</div>
+	</header>
+	<br class="clear" />
 
-<%= yield %>
+	<div class="container">
+		<% if flash[:error].present? %>
+			<div class="col-xs-10 col-xs-offset-1 alert alert-danger">
+				<%= flash[:error].html_safe %>
+			</div>
+		<% end %>
+		<%= yield %>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+      <div class="col-xs-12 col-sm-12 footer-blurb">
+        		Footer
+      </div>
+		</div>
+	</div>
 
 </body>
 </html>

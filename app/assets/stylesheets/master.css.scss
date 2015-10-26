@@ -1,0 +1,121 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+@import url(https://fonts.googleapis.com/css?family=Passion+One);
+
+/* When the screen is small, use these styles instead */
+@media (max-width: 750px) {
+
+  .footer-blurb {
+    text-align: center;
+  }
+
+}
+
+header {
+  display: block;
+  border-top: 15px solid #302B27;
+  background-color: #274690;
+  overflow: auto;
+}
+
+.clear {
+	clear:both;
+}
+
+.douzie-logo {
+    font-family: "Passion One";
+    font-weight:bold;
+    position: relative;
+    border-radius: 15px;
+    background: #576CA8;
+    width: 60px;
+    height: 60px;
+    margin: 10px 10px;
+    text-align: center;
+    color: #F5F3F5;
+    font-size: 20px;
+    line-height: 20px;
+    float: left;
+}
+
+.logo-text {
+  float: left;
+  margin-top: 30px;
+  font-size: 28px;
+  line-height: 20px;
+  color: #F5F3F5;
+  text-decoration: none;
+  font-family: "Passion One";
+}
+
+.slogan {
+  font-size: 12px;
+  font-family: "Lato", serif;
+  font-style: italic;
+  color: #F5F3F5;
+}
+
+
+.links a {
+  color:black;
+  font-size: 25px;
+  border-bottom: 1px solid #dfdfdf;
+  font-family: "Lato", serif;
+  font-weight: bold;
+}
+
+
+hr {
+  clear:both;
+}
+
+.container {
+}
+
+h1 {
+  font-family: "Lato", serif;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+h2 {
+  font-family: "Lato", serif;
+}
+
+.footer-blurb {
+  font-family: "Lato", serif;
+  font-style: italic;
+  text-align: center;
+  font-size: 10px;
+}
+
+.logo:hover {
+  text-decoration:none;
+}
+
+.about {
+  font-family: "Lato", serif;
+}
+
+
+.modal {
+  font-family: "Lato", serif;
+}
+
+h2 span {
+  color: #dddddd;
+}
+
+::selection {
+  background-color: #00A896;
+}
+
+.square {
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: #302B27;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
