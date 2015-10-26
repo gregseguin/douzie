@@ -4,4 +4,8 @@ class JokesController < ApplicationController
 		@joke = Joke.first
 	end
 
+	def new
+		@joke = Joke.new
+	end
+
 end
