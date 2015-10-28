@@ -1,0 +1,7 @@
+<%= simple_form_for @joke do |f| %>
+  <%= f.input :title %>
+  <%= f.input :saying %>
+  <%= f.input :author %>
+  <br />
+  <%= f.submit 'Save', :class => 'btn btn-danger' %>
+<% end %>

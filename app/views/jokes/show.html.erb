@@ -1,0 +1,12 @@
+<h1><%= @joke.title %></h1>
+<p><%= @joke.saying %></p>
+<p><%= @joke.author %></p>
+<%= link_to "<< Back to Joke List", jokes_path %>
+<br />
+<br />
+<%= link_to "delete", joke_path(@joke), method: :delete, data: {confirm: "Really delete the joke?"} %>
+<br />
+<br />
+<%= link_to "edit", edit_joke_path(@joke) %>
+
+

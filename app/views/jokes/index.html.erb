@@ -1,7 +1,13 @@
 <h2>
 	<span>Funny Joke of the Day</span>
 </h2>	
-<%= @joke.inspect %>
+<ul>
+  <% @jokes.each do |joke| %>
+    <li>
+      <%= joke.title %>
+    </li>
+  <% end %>
+</ul>
 
 <h2>
 	<span>Categories</span>
