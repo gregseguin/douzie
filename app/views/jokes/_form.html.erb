@@ -2,6 +2,10 @@
   <%= f.input :title %>
   <%= f.input :saying %>
   <%= f.input :author %>
+  <%= f.label :tag_list %>
+  <br />
+  <%= f.text_field :tag_list %>
+  <br />
   <br />
   <%= f.submit 'Save', :class => 'btn btn-danger' %>
 <% end %>

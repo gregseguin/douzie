@@ -1,0 +1,7 @@
+<h1>Jokes Tagged with <%= @tag.name %></h1>
+
+<ul>
+  <% @tag.jokes.each do |joke| %>
+    <li><%= link_to joke.title, joke_path(joke) %></li>
+  <% end %>
+</ul>

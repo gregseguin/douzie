@@ -1,6 +1,14 @@
 <h1><%= @joke.title %></h1>
 <p><%= @joke.saying %></p>
 <p><%= @joke.author %></p>
+<p>
+	Tags:
+	<% @joke.tags.each do |tag| %>
+		<%= link_to tag.name, tag_path(tag) %>
+	<% end %>
+</p>
+<br />
+<br />
 <%= link_to "<< Back to Joke List", jokes_path %>
 <br />
 <br />

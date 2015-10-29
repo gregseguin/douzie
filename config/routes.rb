@@ -6,6 +6,7 @@ Douzie::Application.routes.draw do
   root 'jokes#index'
 
   resources :jokes
+  resources :tags
   
  # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

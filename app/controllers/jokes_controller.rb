@@ -47,7 +47,7 @@ class JokesController < ApplicationController
  	private
 
  	def joke_params
-    	params.require(:joke).permit(:saying, :author, :title)
+    	params.require(:joke).permit(:saying, :author, :title, :tag_list)
   	end
 
 
