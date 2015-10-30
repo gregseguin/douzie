@@ -1,5 +1,6 @@
 class JokesController < ApplicationController
 
+	before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 		@jokes = Joke.all

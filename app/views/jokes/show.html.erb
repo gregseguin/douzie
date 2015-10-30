@@ -9,12 +9,14 @@
 </p>
 <br />
 <br />
-<%= link_to "<< Back to Joke List", jokes_path %>
-<br />
-<br />
-<%= link_to "delete", joke_path(@joke), method: :delete, data: {confirm: "Really delete the joke?"} %>
-<br />
-<br />
-<%= link_to "edit", edit_joke_path(@joke) %>
+<% if logged_in? %>
+	<%= link_to "<< Back to Joke List", jokes_path %>
+	<br />
+	<br />
+	<%= link_to "delete", joke_path(@joke), method: :delete, data: {confirm: "Really delete the joke?"} %>
+	<br />
+	<br />
+	<%= link_to "edit", edit_joke_path(@joke) %>
+<% end %>
 
 
