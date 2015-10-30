@@ -7,6 +7,11 @@ Douzie::Application.routes.draw do
 
   resources :jokes
   resources :tags
+  resources :users
+  resources :user_sessions, only: [ :new, :create, :destroy ]
+
+  get 'login' => 'user_sessions#new'
+  get 'logout' => 'user_sessions#destroy'
   
  # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
