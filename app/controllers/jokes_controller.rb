@@ -3,7 +3,8 @@ class JokesController < ApplicationController
 	before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@jokes = Joke.all
+		@joke = Joke.first
+		@tags = Tag.all
 	end
 
 	def new

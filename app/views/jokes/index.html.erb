@@ -1,43 +1,21 @@
 <h2>
 	<span>Funny Joke of the Day</span>
 </h2>	
-<ul>
-  <% @jokes.each do |joke| %>
-    <li>
-      <%= joke.inspect %>
-    </li>
-  <% end %>
-</ul>
+
+      <h3><%= @joke.saying %></h3>
 
 <h2>
-	<span>Categories</span>
+	<span>Joke Categories</span>
 </h2>
 
 <br />
-
-<div class="col-xs-4 col-sm-2 thumbnail">
-	<div class="square">1</div>
-</div>
-
-<div class="col-xs-4 col-sm-2 thumbnail">
-	<div class="square">2</div>
-</div>
-
-<div class="col-xs-4 col-sm-2 thumbnail">
-	<div class="square">3</div>
-</div>
-
-<div class="col-xs-4 col-sm-2 thumbnail">
-	<div class="square">4</div>
-</div>
-
-<div class="col-xs-4 col-sm-2 thumbnail">
-	<div class="square">5</div>
-</div>
-
-<div class="col-xs-4 col-sm-2 thumbnail">
-	<div class="square">6</div>
-</div>
+<% @tags.each do |tag| %>
+    <div class="col-xs-4 col-sm-2 thumbnail">
+      <div class="<%= cycle('square1', 'square2', 'square3', 'square4') -%>">
+      	<%= link_to tag.name, tag_path(tag) %>
+      </div>
+    </div>
+  <% end %>
 
 <br class="clear" />
 <br />
