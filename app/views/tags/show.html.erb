@@ -1,7 +1,8 @@
-<h1><%= @tag.name %> Jokes</h1>
-
-<ul>
+<h1><%= @tag.name.titlecase %> Jokes</h1>
+<br />
+<br />
   <% @tag.jokes.each do |joke| %>
-    <li><%= link_to joke.title, joke_path(joke) %></li>
+    <h1><%= joke.title %></h1>
+    <h2><%= joke.saying.html_safe %></h2>
+    <h3><%= joke.author %></h3>
   <% end %>
-</ul>

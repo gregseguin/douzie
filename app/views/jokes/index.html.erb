@@ -2,7 +2,7 @@
 	<span>Funny Joke of the Day</span>
 </h2>	
 
-      <h3><%= @joke.saying %></h3>
+      <h3><%= @joke.saying.html_safe %></h3>
 
 <h2>
 	<span>Joke Categories</span>
@@ -12,7 +12,7 @@
 <% @tags.each do |tag| %>
     <div class="col-xs-3 col-sm-2 thumbnail">
       <div class="<%= cycle('square1', 'square2', 'square3', 'square4') -%>">
-      	<%= link_to tag.name, tag_path(tag) %>
+      	<%= link_to tag.name.titlecase, tag_path(tag) %>
       </div>
     </div>
   <% end %>
