@@ -1,12 +1,22 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900);
 @import url(https://fonts.googleapis.com/css?family=Passion+One);
 
-/* When the screen is small, use these styles instead */
-@media (max-width: 750px) {
+
+@media (min-width: 750)
+{
+    .thumbnail {
+      font-size: 12px;
+    }
+
+}
+
+/* When the screen is large, use these styles instead */
+@media (max-width: 751px) {
 
   .footer-blurb {
     text-align: center;
   }
+
 
 }
 
@@ -18,7 +28,7 @@ header {
 }
 
 .clear {
-	clear:both;
+  clear:both;
 }
 
 .douzie-logo {
@@ -111,35 +121,36 @@ h2 span {
 
 .square1 {
     width: 100%;
-    padding-bottom: 100%;
+    /* padding-bottom: 100%; */
     background-color: #1B264F;
     color: #F5F3F5;
 }
 
 .square2 {
     width: 100%;
-    padding-bottom: 100%;
     background-color: #274690;
     color: #F5F3F5;
 }
 
 .square3 {
     width: 100%;
-    padding-bottom: 100%;
     background-color: #576CA8;
     color: #F5F3F5;
 }
 
 .square4 {
     width: 100%;
-    padding-bottom: 100%;
     background-color: #302B27;
     color: #F5F3F5;
 }
 
 .thumbnail {
     border: 0 none;
+    text-align: center;
     box-shadow: none;
+    font-family: "Lato", serif;
+    font-weight: bold;
+    font-size: 28px;
 }
 
 .thumbnail a {

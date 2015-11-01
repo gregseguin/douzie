@@ -10,7 +10,7 @@
 
 <br />
 <% @tags.each do |tag| %>
-    <div class="col-xs-4 col-sm-2 thumbnail">
+    <div class="col-xs-3 col-sm-2 thumbnail">
       <div class="<%= cycle('square1', 'square2', 'square3', 'square4') -%>">
       	<%= link_to tag.name, tag_path(tag) %>
       </div>
