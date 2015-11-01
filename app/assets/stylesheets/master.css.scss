@@ -2,24 +2,6 @@
 @import url(https://fonts.googleapis.com/css?family=Passion+One);
 
 
-@media (min-width: 750)
-{
-    .thumbnail {
-      font-size: 12px;
-    }
-
-}
-
-/* When the screen is large, use these styles instead */
-@media (max-width: 751px) {
-
-  .footer-blurb {
-    text-align: center;
-  }
-
-
-}
-
 header {
   display: block;
   border-top: 15px solid #302B27;
@@ -150,10 +132,17 @@ h2 span {
     box-shadow: none;
     font-family: "Lato", serif;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 28px; 
+}
+
+@media (max-width: 750px) {
+  .thumbnail {
+        font-size: 200%;
+    }
 }
 
 .thumbnail a {
   color: #F5F3F5;
   text-decoration: none;
 }
+
