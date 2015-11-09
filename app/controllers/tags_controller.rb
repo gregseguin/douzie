@@ -8,7 +8,7 @@ def show
 end
 
 def index
-	@tags = Tag.all
+	@tags = Tag.all.order('name ASC')
 end
 
 

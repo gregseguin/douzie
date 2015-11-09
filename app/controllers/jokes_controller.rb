@@ -4,7 +4,7 @@ class JokesController < ApplicationController
 
 	def index
 		@joke = Joke.first
-		@tags = Tag.all
+		@tags = Tag.all.order('name ASC')
 	end
 
 	def new

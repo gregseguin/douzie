@@ -1,8 +1,14 @@
-<h1><%= @tag.name.titlecase %> Jokes</h1>
-<br />
-<br />
+<h2><span><%= @tag.name.titlecase %> Jokes</span></h2>
   <% @tag.jokes.each do |joke| %>
-    <h1><%= joke.title %></h1>
-    <h2><%= joke.saying.html_safe %></h2>
-    <h3><%= joke.author %></h3>
+    <h3><%= joke.saying.html_safe %></h3>
+    <br />
+    <p>Tags:
+		<% joke.tags.each do |tag| %>
+			<%= link_to tag.name, tag_path(tag) %>
+		<% end %>
+    </p>
+
+
+    <p><%= social_share_button_tag(joke.saying.truncate(120)) %></p>
+    <hr />
   <% end %>
