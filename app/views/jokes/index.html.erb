@@ -3,7 +3,16 @@
 </h2>	
 
       <h3><%= @joke.saying.html_safe %></h3>
-
+		<p>
+			Tags:
+				<% @joke.tags.each do |tag| %>
+				<%= link_to tag.name, tag_path(tag) %>
+				<% end %>
+		</p>
+		<p><%= social_share_button_tag(@joke.saying.truncate(120)) %></p>
+<br />
+<br />
+<br />
 <h2>
 	<span>Joke Categories</span>
 </h2>

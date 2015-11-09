@@ -1,6 +1,7 @@
 <h1><%= @joke.title %></h1>
-<p><%= @joke.saying %></p>
+<p><%= @joke.saying.html_safe %></p>
 <p><%= @joke.author %></p>
+<p><%= social_share_button_tag(@joke.title) %></p>
 <p>
 	Tags:
 	<% @joke.tags.each do |tag| %>

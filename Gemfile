@@ -9,6 +9,9 @@ gem 'pg'
 #admin access
 gem 'sorcery'
 
+#social sharing
+gem 'social-share-button'
+
 #admin panel
 gem 'rails_admin'
 
