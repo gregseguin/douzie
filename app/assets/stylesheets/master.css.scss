@@ -60,9 +60,6 @@ hr {
   clear:both;
 }
 
-.container {
-}
-
 h1 {
   font-family: "Lato", serif;
   font-weight: bold;
@@ -102,47 +99,61 @@ h2 span {
 }
 
 .square1 {
-    width: 100%;
-    /* padding-bottom: 100%; */
     background-color: #1B264F;
     color: #F5F3F5;
 }
 
 .square2 {
-    width: 100%;
     background-color: #274690;
     color: #F5F3F5;
 }
 
 .square3 {
-    width: 100%;
     background-color: #576CA8;
     color: #F5F3F5;
 }
 
 .square4 {
-    width: 100%;
     background-color: #302B27;
     color: #F5F3F5;
 }
 
+.row a {
+  color: #F5F3F5;
+  text-decoration: none;
+}
+
+.dummy {
+    margin-top: 100%;
+}
+
 .thumbnail {
-    border: 0 none;
-    text-align: center;
-    box-shadow: none;
-    font-family: "Lato", serif;
+    font-family: Lato, serif;
+    font-size: 28px;
     font-weight: bold;
-    font-size: 28px; 
+    color: #F5F3F5;
+    text-decoration: none;
+    position: absolute;
+    top: 15px;
+    bottom: 0;
+    left: 0px;
+    right: 0;
+    text-align:center;
+    padding-top:calc(50% - 30px);
+    opacity: 1.0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.row .thumbnail {
+    border:0;
+    box-shadow:0;
+    border-radius:0;
 }
 
 @media (max-width: 750px) {
   .thumbnail {
-        font-size: 200%;
+        font-size: 95%;
+        top: auto;
     }
-}
-
-.thumbnail a {
-  color: #F5F3F5;
-  text-decoration: none;
 }
 

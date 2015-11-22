@@ -11,20 +11,22 @@
 		</p>
 		<p><%= social_share_button_tag(@joke.saying.truncate(120)) %></p>
 <br />
-<br />
-<br />
 <h2>
 	<span>Joke Categories</span>
 </h2>
 
-<br />
-<% @tags.each do |tag| %>
-    <div class="col-xs-3 col-sm-2 thumbnail">
-      <div class="<%= cycle('square1', 'square2', 'square3', 'square4') -%>">
-      	<%= link_to tag.name.titlecase, tag_path(tag) %>
-      </div>
-    </div>
-  <% end %>
+<div class="container">
+	<div class="row">
+
+		<% @tags.each do |tag| %>
+    		<div class="col-md-2 col-sm-3 col-xs-4 <%= cycle('square1', 'square2', 'square3', 'square4') -%>">
+				<div class="dummy"></div>
+      			<%= link_to tag.name.titlecase, tag_path(tag), :class=>"thumbnail"  %>
+    		</div>
+		<% end %>
+      
+  	</div>
+</div>
 
 <br class="clear" />
 <br />
