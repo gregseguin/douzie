@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030024816) do
+ActiveRecord::Schema.define(version: 20151122234957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "jokes", force: true do |t|
-    t.string   "title"
-    t.string   "saying"
-    t.string   "author"
+  create_table "jokes", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "saying"
+    t.string   "author",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "taggings", force: true do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "joke_id"
     t.datetime "created_at"
@@ -34,17 +34,17 @@ ActiveRecord::Schema.define(version: 20151030024816) do
   add_index "taggings", ["joke_id"], name: "index_taggings_on_joke_id", using: :btree
   add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
-  create_table "tags", force: true do |t|
-    t.string   "name"
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "username",         null: false
-    t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
+  create_table "users", force: :cascade do |t|
+    t.string   "username",         limit: 255, null: false
+    t.string   "email",            limit: 255, null: false
+    t.string   "crypted_password", limit: 255, null: false
+    t.string   "salt",             limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
