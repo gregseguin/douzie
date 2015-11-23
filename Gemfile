@@ -12,6 +12,8 @@ gem 'sorcery'
 #social sharing
 gem 'social-share-button'
 
+gem 'responders'
+
 #admin panel
 gem 'rails_admin'
 

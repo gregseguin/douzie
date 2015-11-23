@@ -1,4 +1,6 @@
 Douzie::Application.routes.draw do
+  get 'sitemap/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -7,6 +9,7 @@ Douzie::Application.routes.draw do
   root 'jokes#index'
 
   resources :jokes
+  resources :sitemap, only: [:index]
   resources :tags
   resources :users
   resources :user_sessions, only: [ :new, :create, :destroy ]
