@@ -16,6 +16,7 @@ Douzie::Application.routes.draw do
 
   get 'login' => 'user_sessions#new'
   get 'logout' => 'user_sessions#destroy'
+  get 'privacy', :to => 'jokes#privacy'
   
  # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

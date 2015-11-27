@@ -9,6 +9,7 @@ header {
   border-top: 15px solid #302B27;
   background-color: #274690;
   overflow: auto;
+  z-index: 1;
 }
 
 .clear {
@@ -164,14 +165,21 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 60px;
   background-color: #274690;
+}
+
+.footer a {
+  color: #F5F3F5;
+  text-decoration: none;
 }

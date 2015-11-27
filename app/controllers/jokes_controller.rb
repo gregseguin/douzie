@@ -46,6 +46,9 @@ class JokesController < ApplicationController
   		redirect_to joke_path(@joke)
 	end
 
+	def privacy
+	end
+
  	private
 
  	def joke_params
