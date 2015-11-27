@@ -14,6 +14,9 @@ gem 'social-share-button'
 
 gem 'responders'
 
+#friendly urls
+gem 'friendly_id', '~> 5.1.0'
+
 #admin panel
 gem 'rails_admin'
 

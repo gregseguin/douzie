@@ -1,5 +1,8 @@
 class Tag < ActiveRecord::Base
-	
+	include FriendlyId
+	friendly_id :name, use: :slugged
+	validates_presence_of :name, :slug
+
 	has_many :taggings
 	has_many :jokes, through: :taggings
 
@@ -8,3 +11,5 @@ class Tag < ActiveRecord::Base
 	end
 
 end
+
+Tag.create! name: "test"
