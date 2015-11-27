@@ -10,7 +10,7 @@ Douzie::Application.routes.draw do
 
   resources :jokes
   resources :sitemap, only: [:index]
-  resources :tags
+  resources :tags, :path => "jokes-about"
   resources :users
   resources :user_sessions, only: [ :new, :create, :destroy ]
 

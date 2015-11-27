@@ -11,5 +11,3 @@ class Tag < ActiveRecord::Base
 	end
 
 end
-
-Tag.create! name: "test"
