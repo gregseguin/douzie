@@ -15,22 +15,20 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-70487144-1', 'auto');
   ga('require', 'linkid');
   ga('send', 'pageview');
-
   </script>
 
 </head>
 <body>
-	<header>
-		<div class="col-xs-12">
-			<%= link_to root_path, :class => 'logo' do %>
-				<div class="douzie-logo">
-  					<br />
-  					: ]
-				</div>
+  <header>
+    <div class="col-xs-12">
+      <%= link_to root_path, :class => 'logo' do %>
+        <div class="douzie-logo">
+            <br />
+            : ]
+        </div>
         <div class="logo-text">
           Douzie
           <br />
@@ -38,17 +36,17 @@
             funny jokes live here
           </span>
         </div>
-			<% end %>
-		</div>
-	</header>
-	<br class="clear" />
+      <% end %>
+    </div>
+  </header>
+  <br class="clear" />
 
-	<div class="container">
-		<% if flash.notice.present? %>
-			<div class="col-xs-10 col-xs-offset-1 alert alert-danger">
-				<%= flash.notice.html_safe %>
-			</div>
-		<% end %>
+  <div class="container mainbody">
+    <% if flash.notice.present? %>
+      <div class="col-xs-10 col-xs-offset-1 alert alert-danger">
+        <%= flash.notice.html_safe %>
+      </div>
+    <% end %>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- First Ad -->
@@ -61,17 +59,8 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-		<%= yield %>
-	</div>
-
-	<div class="footer">
-		<div class="container">
-  
-		</div>
-	</div>
-
-</body>
-</html>
+    <%= yield %>
+  </div>
 
 <div class="footer">
     <div class="container">

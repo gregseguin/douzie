@@ -1,4 +1,4 @@
-<h2><span><%= @tag.name.titlecase %> Jokes</span></h2>
+<h2><span>Funny <%= @tag.name.titlecase %> Jokes</span></h2>
   <% @tag.jokes.each do |joke| %>
     <h3><%= joke.saying.html_safe %></h3>
     <br />

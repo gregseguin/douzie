@@ -16,3 +16,7 @@
 //= require turbolinks
 //= require social-share-button
 //= require_tree .
+
+// CSS3 animated & responsive dropdown menu
+// Latest version: https://github.com/catalinred/Animenu
+
