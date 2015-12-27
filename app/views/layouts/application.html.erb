@@ -19,26 +19,43 @@
   ga('require', 'linkid');
   ga('send', 'pageview');
   </script>
-
 </head>
+
 <body>
-  <header>
-    <div class="col-xs-12">
-      <%= link_to root_path, :class => 'logo' do %>
-        <div class="douzie-logo">
-            <br />
-            : ]
-        </div>
-        <div class="logo-text">
-          Douzie
-          <br />
-          <span class="slogan">
-            funny jokes live here
-          </span>
-        </div>
-      <% end %>
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <%= link_to 'Douzie', root_path, :class => 'logo-text navbar-brand' %>
     </div>
-  </header>
+    
+    <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to "Home", root_path %>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Joke Categories<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+
+            <% @navitems.each do |navitem| %>
+            <li><%= link_to navitem.name.titlecase, tag_path(navitem) %></li>
+            <% end %>
+
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  
   <br class="clear" />
 
   <div class="container mainbody">
