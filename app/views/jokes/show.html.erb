@@ -7,8 +7,8 @@
 	<% @joke.tags.each do |tag| %>
 		<%= link_to tag.name, tag_path(tag) %>
 </p>
-<p>Share: <%= social_share_button_tag(@joke.title) %></p>
 	<% end %>
+	<p>Share: <%= social_share_button_tag(@joke.title) %></p>
 <br />
 <br />
 
