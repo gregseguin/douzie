@@ -5,6 +5,10 @@
     margin-top: 100px;
 }
 
+body {
+  background-color: white;
+}
+
 .clear {
   clear:both;
 }
@@ -64,6 +68,11 @@ h1 {
 
 h2 {
   font-family: "Lato", serif;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .footer-blurb {
@@ -190,4 +199,47 @@ body {
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
 .navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #FFFFFF}
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
+
+.box{
+  float:center;
+  background-color:white; 
+  margin:0px 0px;
+  border-radius:5px;
+  display:inline-block;
+}
+
+.box h3{
+  font-family: 'Didact Gothic', sans-serif;
+  font-weight:normal;
+  text-align:left;
+  color:#fff;
+  padding: 50px 50px;
+}
+
+.box5{
+  background-color: rgba(39, 70, 144, 1);
+}
+
+.shadow5
+{
+  position:relative;
+}
+
+.shadow5:before, .shadow5:after{
+  content:"";
+  position:absolute;
+  bottom:0;top:2px;left:15px;right:15px;
+  z-index:-1;
+  border-radius:100px/30px;
+ -webkit-box-shadow:0 0 30px 2px #486685;
+  -moz-box-shadow:0 0 30px 2px #486685;
+  box-shadow: 0 0 30px 2px #486685;
+}
+.shadow5:after{
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;left: auto;
+}
+
 

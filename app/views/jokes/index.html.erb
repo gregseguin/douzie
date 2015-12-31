@@ -2,14 +2,18 @@
 	<span>Random Funny Joke</span>
 </h2>	
 
-      <h3><%= @joke.saying.html_safe %></h3>
-		<p>
+<div class="box box5 shadow5">
+      <h3><%= @joke.saying.html_safe %></h3>	
+</div>
+<p>
 			Tags:
 				<% @joke.tags.each do |tag| %>
-				<%= link_to tag.name, tag_path(tag) %>
-				<% end %>
-		</p>
-		<p><%= social_share_button_tag(@joke.saying.truncate(120)) %></p>
+				<%= link_to tag.name, tag_path(tag) %> 
+	   			<% end %>
+</p>
+<p>Share: <%= social_share_button_tag(@joke.saying.truncate(120)) %></p>
+
+
 <hr width="80%">
 <h2>
 	<span>Joke Categories</span>
@@ -32,3 +36,7 @@
 <br />
 <br />
 <br />
+
+<div class="box box1 shadow1">
+    <h3>Shadow 1</h3>
+  </div>
