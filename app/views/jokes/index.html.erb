@@ -4,13 +4,13 @@
 
 <div class="hidden-xs col-sm-2 meta">
 	<span class="metatitle">Title:</span> <br />
-	<span class="metafield"><%= link_to @joke.title, joke_path(@joke) %></span>
+	<span class="metafield metalinks"><%= link_to @joke.title, joke_path(@joke) %></span>
 	<br />
 	<br />
 	<p>
 	<span class="metatitle">Tags:</span>
 	<br />
-	<span class="metafield">
+	<span class="metafield metalinks">
 		<% @joke.tags.each do |tag| %>
 		<%= link_to tag.name, tag_path(tag) %> 
 		<br />
