@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 @import url(https://fonts.googleapis.com/css?family=Passion+One);
 
 .mainbody {
@@ -41,7 +41,7 @@ body {
 
 .slogan {
   font-size: 12px;
-  font-family: "Lato", serif;
+  font-family: "Slabo 27px", serif;
   font-style: italic;
   color: #F5F3F5;
 }
@@ -51,7 +51,7 @@ body {
   color:black;
   font-size: 25px;
   border-bottom: 1px solid #dfdfdf;
-  font-family: "Lato", serif;
+  font-family: "Slabo 27px", serif;
   font-weight: bold;
 }
 
@@ -61,13 +61,18 @@ hr {
 }
 
 h1 {
-  font-family: "Lato", serif;
+  font-family: "Slabo 27px", serif;
   font-weight: bold;
   font-size: 48px;
 }
 
 h2 {
-  font-family: "Lato", serif;
+  font-family: "Slabo 27px", serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0.066px;
+  line-height: 34px;
+  color: black;
 }
 
 h3 {
@@ -76,7 +81,7 @@ h3 {
 }
 
 .footer-blurb {
-  font-family: "Lato", serif;
+  font-family: "Slabo 27px", serif;
   font-style: italic;
   text-align: center;
   font-size: 10px;
@@ -88,20 +93,12 @@ h3 {
 }
 
 .about {
-  font-family: "Lato", serif;
+  font-family: "Slabo 27px", serif;
 }
 
 
 .modal {
-  font-family: "Lato", serif;
-}
-
-h2 span {
-  color: #dddddd;
-}
-
-::selection {
-  background-color: #00A896;
+  font-family: "Slabo 27px", serif;
 }
 
 .square1 {
@@ -134,7 +131,7 @@ h2 span {
 }
 
 .thumbnail {
-    font-family: Lato, serif;
+    font-family: "Slabo 27px", serif;
     font-size: 28px;
     font-weight: bold;
     color: #F5F3F5;
@@ -200,46 +197,30 @@ body {
 .navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #FFFFFF}
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
 
-.box{
-  float:center;
-  background-color:white; 
-  margin:0px 0px;
-  border-radius:5px;
-  display:inline-block;
-}
 
-.box h3{
-  font-family: 'Didact Gothic', sans-serif;
+.saying {
+  background-color: #274690;
+  font-family: 'Slabo 27px', serif;
+  color: white;
+  font-size: 28px;
   font-weight:normal;
+  letter-spacing: 0.054px;
+  line-height: 36px;
   text-align:left;
-  color:#fff;
   padding: 50px 50px;
 }
 
-.box5{
-  background-color: rgba(39, 70, 144, 1);
+.meta {
+  text-align: right;
 }
 
-.shadow5
-{
-  position:relative;
+.metatitle {
+  color: black;
+  font-family: Helvetica;
 }
 
-.shadow5:before, .shadow5:after{
-  content:"";
-  position:absolute;
-  bottom:0;top:2px;left:15px;right:15px;
-  z-index:-1;
-  border-radius:100px/30px;
- -webkit-box-shadow:0 0 30px 2px #486685;
-  -moz-box-shadow:0 0 30px 2px #486685;
-  box-shadow: 0 0 30px 2px #486685;
+.metafield {
+  color: #274690;
+  font-family: Garamond;
+  font-weight: bold;
 }
-.shadow5:after{
-  -webkit-transform: rotate(8deg);
-  -moz-transform: rotate(8deg);
-  transform: rotate(8deg);
-  right: 10px;left: auto;
-}
-
-
