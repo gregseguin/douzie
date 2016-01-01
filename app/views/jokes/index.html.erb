@@ -12,7 +12,7 @@
 	<br />
 	<span class="metafield metalinks">
 		<% @joke.tags.each do |tag| %>
-		<%= link_to tag.name, tag_path(tag) %> 
+		<%= link_to tag.name.downcase, tag_path(tag) %> 
 		<br />
 	   	<% end %>
 	</span>
