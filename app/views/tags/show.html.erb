@@ -2,10 +2,13 @@
 
   <ol class="circle-list">
       <% @tag.jokes.each do |joke| %>
-          <li>
-              <h2><%= link_to joke.title, joke_path(joke) %></h2>
-              <p>Joke text here.</p>
-          </li>
-
+              <%= link_to joke_path(joke) do %>
+              <li>
+                <h2><%= joke.title %></h2>
+                <p><%= strip_tags smart_truncate(joke.saying, :setences => 1) %></p>
+              </li>
+              <% end %>
       <% end %>
   </ol>
+
+
