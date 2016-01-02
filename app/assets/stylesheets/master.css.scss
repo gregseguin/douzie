@@ -234,50 +234,44 @@ a:hover {
     letter-spacing: -1px;
 }
 
-.rectangle-list a{
-    position: relative;
-    display: block;
-    padding: .4em .4em .4em .8em;
-    *padding: .4em;
-    margin: .5em 0 .5em 2.5em;
-    background: #ddd;
-    color: #444;
-    text-decoration: none;
-    transition: all .3s ease-out;   
+.circle-list li{
+    padding: 2.5em;
+    border-bottom: 1px dashed #ccc;
 }
 
-.rectangle-list a:hover{
-    background: #eee;
-}   
+.circle-list h2{
+    position: relative;
+    margin: 0;
+}
 
-.rectangle-list a:before{
+.circle-list p{
+    margin: 0;
+}
+
+.circle-list h2:before{
     content: counter(li);
     counter-increment: li;
-    position: absolute; 
-    left: -2.5em;
-    top: 50%;
-    margin-top: -1em;
-    background: #87ceeb;
-    height: 2em;
-    width: 2em;
-    line-height: 2em;
+    position: absolute;    
+    z-index: -1;
+    left: -1.3em;
+    top: -.8em;
+    background: #f5f5f5;
+    height: 1.5em;
+    width: 1.5em;
+    border: .1em solid rgba(0,0,0,.05);
     text-align: center;
-    font-weight: bold;
+    font: italic bold 1em/1.5em Georgia, Serif;
+    color: #ccc;
+    border-radius: 1.5em;
+    transition: all .2s ease-out;    
 }
 
-.rectangle-list a:after{
-    position: absolute; 
-    content: '';
-    border: .5em solid transparent;
-    left: -1em;
-    top: 50%;
-    margin-top: -.5em;
-    transition: all .3s ease-out;               
-}
-
-.rectangle-list a:hover:after{
-    left: -.5em;
-    border-left-color: #87ceeb;             
+.circle-list li:hover h2:before{
+    background-color: #87ceeb;
+    border-color: rgba(0,0,0,.08);
+    border-width: .2em;
+    color: #444;
+    transform: scale(1.5);
 }
 
 ol {
