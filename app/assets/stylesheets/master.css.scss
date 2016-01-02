@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
-@import url(https://fonts.googleapis.com/css?family=Passion+One);
+@import url(https://fonts.googleapis.com/css?family=Cantarell);
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
 
 .mainbody {
     margin-top: 100px;
@@ -13,21 +13,6 @@ body {
   clear:both;
 }
 
-.douzie-logo {
-    font-family: "Passion One";
-    font-weight:bold;
-    position: relative;
-    border-radius: 15px;
-    background: #576CA8;
-    width: 60px;
-    height: 60px;
-    margin: 10px 10px;
-    text-align: center;
-    color: #F5F3F5;
-    font-size: 20px;
-    line-height: 20px;
-    float: left;
-}
 
 .logo-text {
   float: left;
@@ -36,20 +21,9 @@ body {
   line-height: 20px;
   color: #F5F3F5;
   text-decoration: none;
-  font-family: "Passion One";
-}
-
-.slogan {
-  font-size: 12px;
-  font-family: "Slabo 27px", serif;
-  font-style: italic;
-  color: #F5F3F5;
-}
-
-
-.metalinks {
-  text-decoration: none;
-  border-bottom: 1px #337ab7 dotted;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 
@@ -58,17 +32,16 @@ hr {
 }
 
 h1 {
-  font-family: "Slabo 27px", serif;
-  font-weight: bold;
-  font-size: 48px;
 }
 
 h2 {
-  font-family: "Slabo 27px", serif;
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 0.066px;
-  line-height: 34px;
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin: 0 0 23px 0;
   color: black;
 }
 
@@ -77,13 +50,6 @@ h3 {
   margin-bottom: 0px;
 }
 
-.footer-blurb {
-  font-family: "Slabo 27px", serif;
-  font-style: italic;
-  text-align: center;
-  font-size: 10px;
-  color: #F5F3F5;
-}
 
 .logo:hover {
   text-decoration:none;
@@ -128,9 +94,12 @@ h3 {
 }
 
 .thumbnail {
-    font-family: "Slabo 27px", serif;
-    font-size: 28px;
-    font-weight: bold;
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
     color: #F5F3F5;
     text-decoration: none;
     position: absolute;
@@ -173,15 +142,27 @@ body {
   width: 100%;
   height: 60px;
   background-color: #274690;
+  text-align: center;
 }
 
 .footer a {
   color: #F5F3F5;
   text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Cantarell', sans-serif;
+  font-size: 11px;
+  line-height: 18px;
+  color: #F5F3F5;
 }
 
-.navbar-inverse { background-color: #274690}
-.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #1B264F}
+.navbar-inverse { 
+  background-color: #274690;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { 
+  background-color: #1B264F;
+}
+
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #1B264F}
 .dropdown-menu { background-color: #274690}
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #1B264F}
@@ -204,14 +185,14 @@ body {
 
 .saying {
   background-color: #274690;
-  font-family: 'Slabo 27px', serif;
   color: white;
-  font-size: 28px;
   font-weight:normal;
-  letter-spacing: 0.054px;
-  line-height: 36px;
   text-align:left;
   padding: 50px 50px;
+  font-family: 'Cantarell', sans-serif;
+  font-size: 17px;
+  line-height: 23px;
+  margin: 0 0 23px 0;
 }
 
 .meta {
@@ -219,16 +200,36 @@ body {
 }
 
 .metatitle {
-  color: black;
-  font-family: Helvetica;
+  color: #274690;
+  font-family: 'Cantarell', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 12px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
 .metafield {
-  color: #274690;
-  font-family: Garamond;
-  font-weight: bold;
+  font-family: 'Cantarell', sans-serif;
+  font-size: 10px;
+}
+
+.metafield a {
+  color: black;
+}
+
+.metalinks {
+  text-decoration: none;
+  border-bottom: 1px black dotted;
 }
 
 a:hover {
   text-decoration: none;
+}
+
+.navbar-nav {
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }

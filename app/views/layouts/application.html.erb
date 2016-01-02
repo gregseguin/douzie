@@ -60,21 +60,10 @@
 
 <div class="footer">
     <div class="container">
-      <div class="col-xs-12 footer-blurb">
-           <%= link_to 'Privacy Policy', privacy_path %><br />
-          About <br />
-          Contact <br />
+      <div class="col-xs-12">
+          <%= link_to 'Privacy Policy', privacy_path %><br />
+          <a href="">About</a><br />
+          <a href="">Contact</a><br />
       </div>
     </div>
   </div>
-
-      <!--
-        <div class="col-xs-12 col-sm-12 footer-blurb">
-          <% if logged_in? %>
-              <%= "Logged in as #{current_user.email}" %>
-            <%= link_to "(logout)", logout_path %>
-          <% else %>
-              <%= link_to "(login)", login_path %>
-          <% end %>
-        </div>
-      -->
