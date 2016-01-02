@@ -1,6 +1,7 @@
 <h2><span>Funny <%= @tag.name.titlecase %> Jokes</span></h2>
-<br />
-  <% @tag.jokes.each do |joke| %>
-    <h3><%= link_to joke.title, joke_path(joke) %></h3> 
-    <br />
-  <% end %>
+
+  <ol class="rectangle-list">
+      <% @tag.jokes.each do |joke| %>
+          <li><%= link_to joke.title, joke_path(joke) %></li> 
+      <% end %>
+  </ol>
