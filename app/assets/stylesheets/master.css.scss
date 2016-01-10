@@ -285,3 +285,36 @@ ol {
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
 
+.social-share-button-facebook {
+  display: inline-block;
+  background: none;
+  content: "\f082;";
+  font-family: FontAwesome;
+  font-size: 30px;
+}
+
+.social-share-button-facebook:before {
+  display: inline-block;
+  background: none;
+  content: "\f082";
+  font-family: FontAwesome;
+  font-size: 30px;
+}
+
+.social-share-button-twitter {
+  display: inline-block;
+  background: none;
+  content: "\f081;";
+  font-family: FontAwesome;
+  font-size: 30px;
+  padding-right: 25px;
+  }
+
+  .social-share-button-twitter:before {
+  display: inline-block;
+  background: none;
+  content: "\f081";
+  font-family: FontAwesome;
+  font-size: 30px;
+  padding-right: 25px;
+}

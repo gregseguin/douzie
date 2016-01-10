@@ -17,7 +17,7 @@
 	   	<% end %>
 	</span>
 	</p>
-	<p class="metatitle">Share: <%= social_share_button_tag(@joke.saying.truncate(120)) %></p>
+	<%= social_share_button_tag(@joke.saying.truncate(120)) %>
 </div>
 
 
@@ -25,6 +25,7 @@
       <%= @joke.saying.html_safe %>	
 </div>
 <br class="clear" />
+
 
 
 

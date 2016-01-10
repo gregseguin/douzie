@@ -3,14 +3,13 @@
 </div>
 
 <br class="clear" />
+<p><%= social_share_button_tag(@joke.title, :popup => "true") %></p>
 <p>
 	Tags:
 	<% @joke.tags.each do |tag| %>
 		<%= link_to tag.name, tag_path(tag) %>
 	<% end %>
 </p>
-	<p>Share: <%= social_share_button_tag(@joke.title) %></p>
+	
 <br />
-<br />
-
-
+<%= link_to "Back to Jokes List", :back %>
