@@ -11,11 +11,7 @@ Douzie::Application.routes.draw do
   resources :jokes
   resources :sitemap, only: [:index]
   resources :tags, :path => "funny-jokes"
-  resources :users
-  resources :user_sessions, only: [ :new, :create, :destroy ]
 
-  get 'login' => 'user_sessions#new'
-  get 'logout' => 'user_sessions#destroy'
   get 'privacy', :to => 'jokes#privacy'
   
  # Example of regular route:

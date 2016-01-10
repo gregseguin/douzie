@@ -1,7 +1,5 @@
 class JokesController < ApplicationController
 
-	before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
-
 	def index
 		@joke = Joke.order("RANDOM()").first
 		@tags = Tag.all.order('name ASC')
