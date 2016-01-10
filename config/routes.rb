@@ -1,4 +1,5 @@
 Douzie::Application.routes.draw do
+  devise_for :users
   get 'sitemap/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -6,7 +7,7 @@ Douzie::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'jokes#index'
+  root to: 'jokes#index'
 
   resources :jokes
   resources :sitemap, only: [:index]

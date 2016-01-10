@@ -29,18 +29,27 @@
     <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to "Home", root_path %>
+            <%= link_to "Home", root_path %>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Joke Categories<b class="caret"></b></a>
-          <ul class="dropdown-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Joke Categories<b class="caret"></b></a>
+            <ul class="dropdown-menu">
 
             <% @navitems.each do |navitem| %>
             <li><%= link_to navitem.name.titlecase, tag_path(navitem) %></li>
             <% end %>
 
-          </ul>
+            </ul>
         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+          <% else %>
+             <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+             <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+          <% end %>
       </ul>
     </nav>
   </div>
@@ -50,10 +59,11 @@
   <br class="clear" />
 
   <div class="container mainbody">
-    <% if flash.notice.present? %>
-      <div class="col-xs-10 col-xs-offset-1 alert alert-danger">
-        <%= flash.notice.html_safe %>
-      </div>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
     <%= yield %>
@@ -64,7 +74,7 @@
       <div class="col-xs-12">
           <%= link_to 'Privacy Policy', privacy_path %><br />
           <a href="">About</a><br />
-          <a href="">Contact</a>
+          <a href="">Contact</a> <li><%= link_to "Home", root_path %></li>
       </div>
     </div>
   </div>
