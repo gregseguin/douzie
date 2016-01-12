@@ -44,6 +44,20 @@ class JokesController < ApplicationController
   		redirect_to joke_path(@joke)
 	end
 
+	#upvote from user
+	def upvote
+		@joke = Joke.find(params[:id])
+		@joke.upvote_from current_user
+		redirect_to joke_path
+	end
+
+	#downvote from user
+	def downvote
+		@joke = Joke.find(params[:id])
+		@joke.downvote_from current_user
+		redirect_to joke_path
+	end
+
 	def privacy
 	end
 

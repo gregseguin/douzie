@@ -1,6 +1,9 @@
 class Joke < ActiveRecord::Base
 	has_many :taggings
 	has_many :tags, through: :taggings
+	acts_as_votable
+
+	default_scope { order(:cached_votes_score => :desc) } 
 
 	def to_param
 		"#{id} #{title}".parameterize

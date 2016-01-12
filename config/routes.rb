@@ -9,7 +9,13 @@ Douzie::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'jokes#index'
 
-  resources :jokes
+  resources :jokes do
+    member do
+      put "like" => "jokes#upvote"
+      put "unlike" => "jokes#downvote"
+    end
+  end
+
   resources :sitemap, only: [:index]
   resources :tags, :path => "funny-jokes"
 

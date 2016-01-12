@@ -10,6 +10,18 @@
 		<%= link_to tag.name, tag_path(tag) %>
 	<% end %>
 </p>
-	
+<%= link_to like_joke_path(@joke), class: "like", method: :put do %>
+	<button type="button" class="btn btn-info" aria-label="Left Align">
+		<i class="fa fa-arrow-up"></i>
+		<span class="badge"><%= @joke.get_upvotes.size %></span>
+	</button>
+<% end %>
+
+<%= link_to unlike_joke_path(@joke), class: "like", method: :put do %>
+	<button type="button" class="btn btn-info" aria-label="Left Align">
+		<i class="fa fa-arrow-down"></i>
+		<span class="badge"><%= @joke.get_downvotes.size %></span>
+	</button>
+<% end %>
 <br />
 <%= link_to "Back to Jokes List", :back %>

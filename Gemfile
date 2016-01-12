@@ -9,6 +9,8 @@ gem 'pg'
 #admin access
 gem 'sorcery'
 
+gem 'acts_as_votable'
+
 #social sharing
 gem 'social-share-button'
 
