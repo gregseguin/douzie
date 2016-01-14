@@ -5,7 +5,7 @@
               <%= link_to joke_path(joke) do %>
               <li>
                 <span class="joketitle"><%= joke.title %></span>
-                <span class="jokescore pull-right">Score: <%= number_to_percentage((joke.get_upvotes.size.to_f/(joke.get_upvotes.size.to_f+joke.get_downvotes.size.to_f)*100), precision: 1) %></span>
+                <span class="jokescore">&nbsp;&nbsp;&nbsp;<%= number_to_percentage((joke.get_upvotes.size.to_f/(joke.get_upvotes.size.to_f+joke.get_downvotes.size.to_f)*100), precision: 1) %></span>
                 <p><%= sanitize joke.saying.truncate_words(10, omission: ' (see more)') %></p>
               </li>
               <% end %>
