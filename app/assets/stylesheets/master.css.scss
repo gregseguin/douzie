@@ -51,18 +51,29 @@ h3 {
 }
 
 
+.joketitle {
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin: 0 0 23px 0;
+  color: black;
+}
+
+.jokescore {
+  font-family: 'Cantarell', sans-serif;
+  font-size: 17px;
+  line-height: 23px;
+  margin: 0 0 23px 0;
+}
+
+
 .logo:hover {
   text-decoration:none;
 }
 
-.about {
-  font-family: "Slabo 27px", serif;
-}
-
-
-.modal {
-  font-family: "Slabo 27px", serif;
-}
 
 .square1 {
     background-color: #1B264F;
