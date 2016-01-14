@@ -10,18 +10,36 @@
 		<%= link_to tag.name, tag_path(tag) %>
 	<% end %>
 </p>
-<%= link_to like_joke_path(@joke), class: "like", method: :put do %>
+<%= link_to like_joke_path(@joke), class: "voteup", method: :put, remote: true, data: { type: :json } do %>
 	<button type="button" class="btn btn-info" aria-label="Left Align">
 		<i class="fa fa-arrow-up"></i>
 		<span class="badge"><%= @joke.get_upvotes.size %></span>
 	</button>
 <% end %>
 
-<%= link_to unlike_joke_path(@joke), class: "like", method: :put do %>
+		<script>
+            $('.voteup')
+          .on('ajax:send', function () { $(this).addClass('loading'); })
+          .on('ajax:complete', function () { $(this).removeClass('loading'); })
+          .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
+          .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("<%= escape_javascript @joke.votes_for.size.to_s %>"); });
+        </script>
+
+
+<%= link_to unlike_joke_path(@joke), class: "votedown", method: :put, remote: true, data: { type: :json } do %>
 	<button type="button" class="btn btn-info" aria-label="Left Align">
 		<i class="fa fa-arrow-down"></i>
 		<span class="badge"><%= @joke.get_downvotes.size %></span>
 	</button>
 <% end %>
+
+ 		<script>
+            $('.votedown')
+          .on('ajax:send', function () { $(this).addClass('loading'); })
+          .on('ajax:complete', function () { $(this).removeClass('loading'); })
+          .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
+          .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("<%= escape_javascript @joke.votes_for.size.to_s %>"); });
+        </script>
+
 <br />
 <%= link_to "Back to Jokes List", :back %>

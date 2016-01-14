@@ -48,14 +48,20 @@ class JokesController < ApplicationController
 	def upvote
 		@joke = Joke.find(params[:id])
 		@joke.upvote_from current_user
-		redirect_to joke_path
+		respond_to do |format|
+			format.html {redirect_to :back}
+			format.json { render json: { count: @joke.get_upvotes.size } }
+		end
 	end
 
 	#downvote from user
 	def downvote
 		@joke = Joke.find(params[:id])
 		@joke.downvote_from current_user
-		redirect_to joke_path
+		respond_to do |format|
+			format.html {redirect_to :back}
+			format.json { render json: { count: @joke.get_downvotes.size } }
+		end
 	end
 
 	def privacy
