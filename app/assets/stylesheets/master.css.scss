@@ -252,7 +252,7 @@ a:hover {
     border-bottom: 1px dashed #ccc;
 }
 
-.circle-list h2{
+.circle-list .joketitle{
     position: relative;
     margin: 0;
 }
@@ -261,7 +261,7 @@ a:hover {
     margin: 0;
 }
 
-.circle-list h2:before{
+.circle-list .joketitle:before{
     content: counter(li);
     counter-increment: li;
     position: absolute;    
@@ -279,7 +279,7 @@ a:hover {
     transition: all .2s ease-out;    
 }
 
-.circle-list li:hover h2:before{
+.circle-list li:hover .joketitle:before{
     background-color: #87ceeb;
     border-color: rgba(0,0,0,.08);
     border-width: .2em;
