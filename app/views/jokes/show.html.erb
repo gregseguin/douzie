@@ -1,19 +1,23 @@
-<div class="col-sm-12 saying">
-<p><%= @joke.saying.html_safe %></p>
+<!-- Joke categories -->
+<div class="col-sm-12">
+	<p>Categories:
+		<% @joke.tags.each do |tag| %>
+			<%= link_to tag.name, tag_path(tag) %>
+		<% end %>
+	</p>
 </div>
 
-<br class="clear" />
-<p><%= social_share_button_tag(@joke.title, :popup => "true") %></p>
-<p>
-	Tags:
-	<% @joke.tags.each do |tag| %>
-		<%= link_to tag.name, tag_path(tag) %>
-	<% end %>
-</p>
+<!-- Joke saying -->
+<div class="col-sm-12 saying">
+	<p><%= @joke.saying.html_safe %></p>
+</div>
+
+<!-- Voting -->
+<div class="col-sm-2 col-xs-6 text-center">
 <%= link_to like_joke_path(@joke), class: "voteup", method: :put, remote: true, data: { type: :json } do %>
-	<button type="button" class="btn btn-info" aria-label="Left Align">
+	<button type="button" class="btn btn-success btn-block" aria-label="Left Align">
 		<i class="fa fa-arrow-up"></i>
-		<span class="badge"><%= @joke.get_upvotes.size %></span>
+		<span class="badge"><%= pluralize @joke.get_upvotes.size, "vote" %></span>
 	</button>
 <% end %>
 
@@ -22,14 +26,15 @@
           .on('ajax:send', function () { $(this).addClass('loading'); })
           .on('ajax:complete', function () { $(this).removeClass('loading'); })
           .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
-          .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("Voted"); });
+          .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("vote saved"); });
         </script>
+</div>
 
-
+<div class="col-sm-2 col-xs-6 text-center">
 <%= link_to unlike_joke_path(@joke), class: "votedown", method: :put, remote: true, data: { type: :json } do %>
-	<button type="button" class="btn btn-info" aria-label="Left Align">
+	<button type="button" class="btn btn-warning btn-block" aria-label="Left Align">
 		<i class="fa fa-arrow-down"></i>
-		<span class="badge"><%= @joke.get_downvotes.size %></span>
+		<span class="badge"><%= pluralize @joke.get_downvotes.size, "vote" %></span>
 	</button>
 <% end %>
 
@@ -38,8 +43,42 @@
           .on('ajax:send', function () { $(this).addClass('loading'); })
           .on('ajax:complete', function () { $(this).removeClass('loading'); })
           .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
-          .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("Voted"); });
+          .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("vote saved"); });
         </script>
+</div>
 
-<br />
-<%= link_to "Back to Jokes List", :back %>
+<!-- Favorites -->
+<div class="col-sm-4 col-xs-12 text-center">
+		<button type="button" class="btn btn-danger btn-block">
+			<i class="fa fa-heart"></i>
+			<span class="badge">favorite</span>
+		</button>
+</div>
+
+<!-- Twitter -->
+<div class="col-sm-2 col-xs-6 text-center">
+	<%= link_to "http://twitter.com/home?status=#{strip_tags(@joke.saying).truncate(120)} #{joke_url(@joke)}" do %>
+			<button type="button" class="btn btn-twitter btn-block">
+				<i class="fa fa-twitter"></i>
+				<span class="badge">tweet</span>
+			</button>
+	<% end %>
+</div>
+
+
+ <!-- Facebook -->
+<div class="col-sm-2 col-xs-6 text-center">
+	<%= link_to "https://www.facebook.com/sharer.php" do %>
+		<button type="button" class="btn btn-facebook btn-block">
+			<i class="fa fa-facebook"></i>
+			<span class="badge">post</span>
+		</button>
+	<% end %>
+</div>
+
+<br class="clear" />
+<br class="clear" />
+
+<div class="col-sm-12 text-center">
+	<%= link_to "Back to Jokes List", :back %>
+</div>
