@@ -3,6 +3,9 @@ class Joke < ActiveRecord::Base
 	has_many :tags, through: :taggings
 	acts_as_votable
 
+	has_many :favorite_jokes
+	has_many :favorited_by, through: :favorite_jokes, source: :user
+
 	default_scope { order(:cached_votes_score => :desc) } 
 
 	def to_param

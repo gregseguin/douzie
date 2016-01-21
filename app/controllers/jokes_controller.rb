@@ -20,6 +20,7 @@ class JokesController < ApplicationController
 
 	def show
 		@joke = Joke.find(params[:id])
+		@favorited = FavoriteJoke.find_by(user: current_user, joke: @joke).present?
 	end
 
 	def destroy
@@ -43,6 +44,26 @@ class JokesController < ApplicationController
 
   		redirect_to joke_path(@joke)
 	end
+
+  # Add and remove favorite jokes
+  # for current_user
+  def favorite
+  	@joke = Joke.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @joke
+      redirect_to :back, notice: 'Added to favorites'
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@joke)
+      redirect_to :back, notice: 'Removed from favorites'
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
 
 	#upvote from user
 	def upvote

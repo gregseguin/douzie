@@ -14,7 +14,9 @@ Douzie::Application.routes.draw do
       put "like" => "jokes#upvote"
       put "unlike" => "jokes#downvote"
     end
+      put :favorite, on: :member
   end
+
 
   resources :sitemap, only: [:index]
   resources :tags, :path => "funny-jokes"
