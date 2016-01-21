@@ -1,7 +1,7 @@
 class JokesController < ApplicationController
 
 	def index
-		@joke = Joke.order("RANDOM()").first
+		@joke = Joke.limit(5).order("RANDOM()").last
 		@tags = Tag.all.order('name ASC')
 	end
 

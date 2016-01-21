@@ -1,7 +1,7 @@
 <h2><span>Funny <%= @tag.name.titlecase %> Jokes</span></h2>
 
   <ol class="circle-list">
-      <% @tag.jokes.each do |joke| %>
+      <% @tag.jokes.order(:cached_votes_score => :desc).each do |joke| %>
               <%= link_to joke_path(joke) do %>
               <li>
                 <span class="joketitle"><%= joke.title %></span>
