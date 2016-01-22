@@ -6,7 +6,13 @@
               <li>
                 <span class="joketitle"><%= joke.title %></span>
                 &nbsp;&nbsp;&nbsp;
-                <span class="jokescore"><%= number_to_percentage((joke.get_upvotes.size.to_f/(joke.get_upvotes.size.to_f+joke.get_downvotes.size.to_f)*100), precision: 1) %></span>
+                <span class="jokescore">
+                    <% if joke.get_upvotes.size == 0 && joke.get_downvotes.size == 0 %>
+                        no votes yet
+                    <% else %>    
+                        <%= number_to_percentage((joke.get_upvotes.size.to_f/(joke.get_upvotes.size.to_f+joke.get_downvotes.size.to_f)*100), precision: 1) %>
+                    <% end %>
+                </span>
                 <p><%= sanitize joke.saying.truncate_words(10, omission: ' (see more)') %></p>
               </li>
               <% end %>
