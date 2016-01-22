@@ -10,7 +10,7 @@
                     <% if joke.get_upvotes.size == 0 && joke.get_downvotes.size == 0 %>
                         no votes yet
                     <% else %>    
-                        <%= number_to_percentage((joke.get_upvotes.size.to_f/(joke.get_upvotes.size.to_f+joke.get_downvotes.size.to_f)*100), precision: 1) %>
+                        score: <%= joke.cached_votes_score %>
                     <% end %>
                 </span>
                 <p><%= sanitize joke.saying.truncate_words(10, omission: ' (see more)') %></p>
