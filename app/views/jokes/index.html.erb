@@ -2,34 +2,141 @@
 	<span>Joke of the Day</span>
 </h2>	
 
-<div class="hidden-xs col-sm-2 meta">
-	<span class="metatitle">Title:</span> <br />
-	<span class="metafield metalinks"><%= link_to @joke.title, joke_path(@joke) %></span>
-	<br />
-	<br />
-	<p>
-	<span class="metatitle">Tags:</span>
-	<br />
-	<span class="metafield metalinks">
-		<% @joke.tags.each do |tag| %>
-		<%= link_to tag.name.downcase, tag_path(tag) %>
-		<br />
-	   	<% end %>
-	</span>
-	</p>
-	<%= social_share_button_tag(@joke.saying.truncate(120)) %>
+
+<!-- Joke saying -->
+<div class="col-sm-12 saying">
+	<p><%= @joke.saying.html_safe %></p>
+</div>
+
+<!-- Voting -->
+<% if user_signed_in? %>
+	<div class="col-sm-2 col-xs-6 text-center">
+		
+		<%= link_to like_joke_path(@joke), class: "voteup", method: :put, remote: true, data: { type: :json } do %>
+			<button type="button" class="btn btn-success btn-block" aria-label="Left Align">
+				<i class="fa fa-arrow-up"></i>
+				<span class="badge"><%= pluralize @joke.get_upvotes.size, "vote" %></span>
+			</button>
+		<% end %>
+
+		<script>
+            $('.voteup')
+          .on('ajax:send', function () { $(this).addClass('loading'); })
+          .on('ajax:complete', function () { $(this).removeClass('loading'); })
+          .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
+          .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("vote saved"); });
+	    </script>
+	</div>
+
+	<div class="col-sm-2 col-xs-6 text-center">
+		<%= link_to unlike_joke_path(@joke), class: "votedown", method: :put, remote: true, data: { type: :json } do %>
+			<button type="button" class="btn btn-warning btn-block" aria-label="Left Align">
+				<i class="fa fa-arrow-down"></i>
+				<span class="badge"><%= pluralize @joke.get_downvotes.size, "vote" %></span>
+			</button>
+		<% end %>
+
+ 		<script>
+            $('.votedown')
+          .on('ajax:send', function () { $(this).addClass('loading'); })
+          .on('ajax:complete', function () { $(this).removeClass('loading'); })
+          .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
+          .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("vote saved"); });
+        </script>
+	</div>
+
+<% else %>
+
+	<div class="col-sm-2 col-xs-6 text-center">
+		
+		<%= link_to '#', data: {toggle: 'modal', target: '#Login'} do %>
+			<button type="button" class="btn btn-success btn-block" aria-label="Left Align">
+				<i class="fa fa-arrow-up"></i>
+				<span class="badge"><%= pluralize @joke.get_upvotes.size, "vote" %></span>
+			</button>
+		<% end %>
+
+	</div>
+
+	<div class="col-sm-2 col-xs-6 text-center">
+		<%= link_to '#', data: {toggle: 'modal', target: '#Login'} do %>
+			<button type="button" class="btn btn-warning btn-block" aria-label="Left Align">
+				<i class="fa fa-arrow-down"></i>
+				<span class="badge"><%= pluralize @joke.get_downvotes.size, "vote" %></span>
+			</button>
+		<% end %>
+
+	</div>
+
+
+<% end %>
+
+
+
+<!-- Favorites -->
+<div class="col-sm-4 col-xs-12 text-center">
+
+	<!-- Allow signed in users to favorite/unfavorite -->
+	<% if user_signed_in? %>
+		<% if @favorited %>
+
+			<!-- Unfavorite a joke -->
+  			<%= link_to favorite_joke_path(@joke, type: "unfavorite"), method: :put do %>
+  				<button type="button" class="btn btn-danger btn-block">
+					<i class="fa fa-heart" style="color:#7f0000"></i>
+					<span class="badge">favorited</span>
+				</button>
+			<% end %>
+		<% else %>
+
+			<!-- Favorite a joke -->
+ 			<%= link_to favorite_joke_path(@joke, type: "favorite"), method: :put do %>	
+				<button type="button" class="btn btn-danger btn-block">
+					<i class="fa fa-heart" style="color: white"></i>
+					<span class="badge">favorite</span>
+				</button>
+			<% end %>
+		<% end %>
+
+	<!-- Have signed out users login if they try to favorite a joke -->
+	<% else %>
+		<%= link_to '#', data: {toggle: 'modal', target: '#Login'} do %>
+				<button type="button" class="btn btn-danger btn-block">
+					<i class="fa fa-heart"></i>
+					<span class="badge">favorite</span>
+				</button>
+		<% end %>
+	<% end %>
 </div>
 
 
-<div class="col-sm-10 saying">
-      <%= @joke.saying.html_safe %>	
+<!-- Twitter -->
+<div class="col-sm-2 col-xs-12 text-center">
+	<%= link_to "http://twitter.com/home?status=#{strip_tags(@joke.saying).truncate(120)} #{joke_url(@joke)}" do %>
+			<button type="button" class="btn twitter btn-block">
+				<i class="fa fa-twitter"></i>
+				<span class="badge">tweet</span>
+			</button>
+	<% end %>
 </div>
+
+
+ <!-- Facebook -->
+<div class="col-sm-2 col-xs-12 text-center">
+	<%= link_to "https://www.facebook.com/sharer.php" do %>
+		<button type="button" class="btn facebook btn-block">
+			<i class="fa fa-facebook"></i>
+			<span class="badge">post</span>
+		</button>
+	<% end %>
+</div>
+
+<br class="clear" />
+<br class="clear" />
+<br class="clear" />
 <br class="clear" />
 
 
-
-
-<hr width="80%">
 <h2>
 	<span>Joke Categories</span>
 </h2>
