@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: #EFF1EA;
 }
 
 .clear {
@@ -78,28 +78,31 @@ h3 {
 
 
 .square1 {
-    background-color: #1B264F;
-    color: #F5F3F5;
+    background-color: #90BE6D;
+    color: #95A977;
 }
 
 .square2 {
-    background-color: #274690;
+    background-color: #FA9D6C;
     color: #F5F3F5;
 }
 
 .square3 {
-    background-color: #576CA8;
+    background-color: #E5B25D;
     color: #F5F3F5;
 }
 
 .square4 {
-    background-color: #302B27;
-    color: #F5F3F5;
+  background-color: #94B9AF;
+}
+
+.square5 {
+  background-color: #BE5B6A;
 }
 
 .row a {
-  color: #F5F3F5;
   text-decoration: none;
+  color: #F5F3F5;
 }
 
 .dummy {
@@ -154,7 +157,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: #274690;
+  background-color: #282B28;
   text-align: center;
 }
 
@@ -168,37 +171,33 @@ body {
   color: #F5F3F5;
 }
 
-.navbar-inverse { 
-  background-color: #274690;
-}
-
-.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { 
-  background-color: #1B264F;
-}
-
-.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #1B264F}
-.dropdown-menu { background-color: #274690}
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #1B264F}
+.navbar-inverse { background-color: #282B28}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #282B28}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #080808}
+.dropdown-menu { background-color: #282B28}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #080808}
 .navbar-inverse { background-image: none; }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
-.navbar-inverse { border-color: #274690}
+.navbar-inverse { border-color: #080808}
 .navbar-inverse .navbar-brand { color: #F5F3F5}
-.navbar-inverse .navbar-brand:hover { color: #FFFFFF}
+.navbar-inverse .navbar-brand:hover { color: #F5F3F5}
 .navbar-inverse .navbar-nav>li>a { color: #F5F3F5}
-.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #FFFFFF}
-.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #FFFFFF}
-.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #F5F3F5}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #F5F3F5}
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #F5F3F5}
 .dropdown-menu>li>a { color: #F5F3F5}
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #FFFFFF}
-.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #FFFFFF}
-.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
-.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #FFFFFF}
-.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #F5F3F5}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #F5F3F5}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #F5F3F5}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #F5F3F5}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #F5F3F5}
+
+
 
 
 .saying {
-  background-color: #274690;
-  color: white;
+  background-color: #7F8A83;
+  color: #282B28;
   font-weight:normal;
   text-align:left;
   padding: 50px 50px;
