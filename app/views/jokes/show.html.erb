@@ -74,7 +74,7 @@
 
 	<!-- Have signed out users login if they try to favorite a joke -->
 	<% else %>
-		<%= link_to new_user_session_path do %>	
+		<%= link_to '#', data: {toggle: 'modal', target: '#Login'} do %>
 				<button type="button" class="btn btn-danger btn-block">
 					<i class="fa fa-heart"></i>
 					<span class="badge">favorite</span>
