@@ -5,10 +5,10 @@
               <%= link_to joke_path(joke) do %>
               <li>
                 <span class="joketitle"><%= joke.title %></span>
-                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
                 <span class="jokescore">
                     <% if joke.get_upvotes.size == 0 && joke.get_downvotes.size == 0 %>
-                        no votes yet
+                        no votes
                     <% else %>    
                         score: <%= joke.cached_votes_score %>
                     <% end %>
