@@ -1,5 +1,9 @@
 class JokesController < ApplicationController
 
+	def after_sign_in_path_for(resource)
+    	request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+    end
+
 	def index
 		@joke = Joke.limit(5).order("RANDOM()").last
 		@tags = Tag.all.order('name ASC')

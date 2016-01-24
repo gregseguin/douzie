@@ -1,5 +1,11 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-	def all
+	  
+    def after_sign_in_path_for(resource)
+      request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+    end
+
+
+  def all
   		user = User.from_omniauth(request.env["omniauth.auth"])
   		if user.persisted?
   			flash.notice = "Signed in!"
