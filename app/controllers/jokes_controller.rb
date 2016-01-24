@@ -1,11 +1,30 @@
 class JokesController < ApplicationController
 
-	def after_sign_in_path_for(resource)
-    	request.env['omniauth.origin'] || stored_location_for(resource) || root_path
-    end
+	
+
+	def joke_of_the_day
+  		count = Joke.count
+
+  		# This will make sure the joke is almost unique of this particular
+  		# date. You can do more complexe calculation to make sure it's
+  		# unique but you get the basic idea
+  		sum_of_date = Date.today.year + Date.today.month + Date.today.day
+
+  		# loop to make sure the sum_of_date is not greater than the count of jokes
+  		new_count = loop do
+    		if sum_of_date >= count
+      			sum_of_date = sum_of_date / 2
+    		else
+     			 break (count - sum_of_date)
+   			end
+  		end
+
+  		Joke.first(new_count).last
+	end
+
 
 	def index
-		@joke = Joke.limit(5).order("RANDOM()").last
+		@joke = joke_of_the_day
 		@tags = Tag.all.order('name ASC')
 	end
 
