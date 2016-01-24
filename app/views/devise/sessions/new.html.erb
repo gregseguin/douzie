@@ -1,5 +1,14 @@
 <h2>Log in</h2>
 
+<div class="col-sm-3 col-xs-6">
+  <a class="btn btn-block btn-social btn-facebook" href="http://www.douzie.com/users/auth/facebook">
+    <span class="fa fa-facebook"></span> Login with Facebook
+  </a>
+</div>
+
+<br />
+<br />
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
