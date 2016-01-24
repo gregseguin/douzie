@@ -13,13 +13,15 @@
 </div>
 
 <!-- Voting -->
-<div class="col-sm-2 col-xs-6 text-center">
-<%= link_to like_joke_path(@joke), class: "voteup", method: :put, remote: true, data: { type: :json } do %>
-	<button type="button" class="btn btn-success btn-block" aria-label="Left Align">
-		<i class="fa fa-arrow-up"></i>
-		<span class="badge"><%= pluralize @joke.get_upvotes.size, "vote" %></span>
-	</button>
-<% end %>
+<% if user_signed_in? %>
+	<div class="col-sm-2 col-xs-6 text-center">
+		
+		<%= link_to like_joke_path(@joke), class: "voteup", method: :put, remote: true, data: { type: :json } do %>
+			<button type="button" class="btn btn-success btn-block" aria-label="Left Align">
+				<i class="fa fa-arrow-up"></i>
+				<span class="badge"><%= pluralize @joke.get_upvotes.size, "vote" %></span>
+			</button>
+		<% end %>
 
 		<script>
             $('.voteup')
@@ -27,16 +29,16 @@
           .on('ajax:complete', function () { $(this).removeClass('loading'); })
           .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
           .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("vote saved"); });
-        </script>
-</div>
+	    </script>
+	</div>
 
-<div class="col-sm-2 col-xs-6 text-center">
-<%= link_to unlike_joke_path(@joke), class: "votedown", method: :put, remote: true, data: { type: :json } do %>
-	<button type="button" class="btn btn-warning btn-block" aria-label="Left Align">
-		<i class="fa fa-arrow-down"></i>
-		<span class="badge"><%= pluralize @joke.get_downvotes.size, "vote" %></span>
-	</button>
-<% end %>
+	<div class="col-sm-2 col-xs-6 text-center">
+		<%= link_to unlike_joke_path(@joke), class: "votedown", method: :put, remote: true, data: { type: :json } do %>
+			<button type="button" class="btn btn-warning btn-block" aria-label="Left Align">
+				<i class="fa fa-arrow-down"></i>
+				<span class="badge"><%= pluralize @joke.get_downvotes.size, "vote" %></span>
+			</button>
+		<% end %>
 
  		<script>
             $('.votedown')
@@ -45,7 +47,35 @@
           .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
           .on('ajax:success', function(e, data, status, xhr) { $(this).find("span").text("vote saved"); });
         </script>
-</div>
+	</div>
+
+<% else %>
+
+	<div class="col-sm-2 col-xs-6 text-center">
+		
+		<%= link_to '#', data: {toggle: 'modal', target: '#Login'} do %>
+			<button type="button" class="btn btn-success btn-block" aria-label="Left Align">
+				<i class="fa fa-arrow-up"></i>
+				<span class="badge"><%= pluralize @joke.get_upvotes.size, "vote" %></span>
+			</button>
+		<% end %>
+
+	</div>
+
+	<div class="col-sm-2 col-xs-6 text-center">
+		<%= link_to '#', data: {toggle: 'modal', target: '#Login'} do %>
+			<button type="button" class="btn btn-warning btn-block" aria-label="Left Align">
+				<i class="fa fa-arrow-down"></i>
+				<span class="badge"><%= pluralize @joke.get_downvotes.size, "vote" %></span>
+			</button>
+		<% end %>
+
+	</div>
+
+
+<% end %>
+
+
 
 <!-- Favorites -->
 <div class="col-sm-4 col-xs-12 text-center">
