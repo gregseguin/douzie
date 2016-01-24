@@ -49,26 +49,30 @@
 
 <!-- Favorites -->
 <div class="col-sm-4 col-xs-12 text-center">
+
+	<!-- Allow signed in users to favorite/unfavorite -->
 	<% if user_signed_in? %>
 		<% if @favorited %>
 
+			<!-- Unfavorite a joke -->
   			<%= link_to favorite_joke_path(@joke, type: "unfavorite"), method: :put do %>
   				<button type="button" class="btn btn-danger btn-block">
 					<i class="fa fa-heart" style="color:#7f0000"></i>
 					<span class="badge">favorited</span>
 				</button>
 			<% end %>
-
 		<% else %>
 
+			<!-- Favorite a joke -->
  			<%= link_to favorite_joke_path(@joke, type: "favorite"), method: :put do %>	
 				<button type="button" class="btn btn-danger btn-block">
-					<i class="fa fa-heart"></i>
+					<i class="fa fa-heart" style="color: white"></i>
 					<span class="badge">favorite</span>
 				</button>
 			<% end %>
-
 		<% end %>
+
+	<!-- Have signed out users login if they try to favorite a joke -->
 	<% else %>
 		<%= link_to new_user_session_path do %>	
 				<button type="button" class="btn btn-danger btn-block">
@@ -77,7 +81,6 @@
 				</button>
 		<% end %>
 	<% end %>
-
 </div>
 
 
