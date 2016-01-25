@@ -145,7 +145,7 @@
 	<div class="row">
 
 		<% @tags.each do |tag| %>
-    		<div class="col-md-2 col-sm-3 col-xs-4 square<%= rand(1..5) %>">
+    		<div class="col-md-2 col-sm-3 col-xs-4 square<%= rand(1..6) %>">
 				<div class="dummy"></div>
       			<%= link_to tag.name.titlecase, tag_path(tag), :class=>"thumbnail"  %>
     		</div>

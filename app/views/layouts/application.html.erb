@@ -13,46 +13,76 @@
 </head>
 
 <body>
-<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-      <%= link_to 'Douzie', root_path, :class => 'logo-text navbar-brand' %>
-    </div>
-    
-    <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
-      <ul class="nav navbar-nav">
-        <li>
-            <%= link_to "Home", root_path %>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Joke Categories<b class="caret"></b></a>
-            <ul class="dropdown-menu">
 
-            <% @navitems.each do |navitem| %>
-            <li><%= link_to navitem.name.titlecase, tag_path(navitem) %></li>
+<nav role="navigation" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header navbar-left pull-left">
+            <%= link_to 'Douzie', root_path, :class => 'logo-text navbar-brand' %>>
+        </div>
+
+        <!-- right align on normal size, right align on xs -->
+        <div class="navbar-header navbar-right pull-right">
+            
+            <% if user_signed_in? == false %>
+
+            <ul class="nav navbar-nav navbar-right pull-left">
+                <li class="nav navbar-link"><%= link_to "Sign up/Login", '#', :class => 'nav navbar-link', data: {toggle: 'modal', target: '#Login'}, :style=>"margin-right:5px;"  %></li>
+            </ul>
+
             <% end %>
 
+            <% if user_signed_in? %>
+                <ul class="nav pull-left">
+                    <li class="dropdown pull-right">
+                        <a href="#" data-toggle="dropdown" style="background-color:#282B28; color:#F5F3F5; margin-top: 5px;" class="dropdown-toggle">
+                        <i class="fa fa-lg fa-user" style="color:#A7C6DA;"></i>
+                        <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                        </ul>
+                    </li>
+                </ul>
+            <% end %>
+            
+
+
+              <!-- Hamburger icon -->
+              <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+        </div>
+        <div class="visible-xs-block clearfix"></div>
+        <div class="collapse navbar-collapse">
+
+            <!-- left align on normal size, collapsed on xs -->
+            <ul class="nav navbar-nav navbar-left">
+                <li><%= link_to "Home", root_path %></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Joke Categories<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <% @navitems.each do |navitem| %>
+                            <li><%= link_to navitem.name.titlecase, tag_path(navitem) %></li>
+                        <% end %>
+                    </ul>
+                </li>
             </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-          <% else %>
-             <li><%= link_to "Sign up/Login", '#', :class => 'navbar-link', data: {toggle: 'modal', target: '#Login'}  %></li>
-          <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
+
+            <!-- right align on normal size, collapsed on xs -->
+            <ul class="nav navbar-nav navbar-right">
+                <!--
+                    <li><a href="/locator"></a></li>
+                    <li><a href="/locator"></a></li>
+                  -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
 
   
   <br class="clear" />
@@ -75,7 +105,7 @@
         </div>
         <div class="modal-body">
        
-             <a class="btn btn-block btn-social btn-facebook" href="http://www.douzie.com/users/auth/facebook">
+             <a class="btn btn-block btn-social btn-facebook" href="/users/auth/facebook">
                 <span class="fa fa-facebook"></span> Login with Facebook
             </a>
           
