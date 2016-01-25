@@ -524,11 +524,12 @@ ol {
 }
 
 #signin {
-  
+  max-height: 50px;
 }
 
 @media(max-width:767px){
   #signin {
     margin: 5px 15px 0px 15px !important;
+    max-height: 50px;
   }
 }
