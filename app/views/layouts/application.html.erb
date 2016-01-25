@@ -25,7 +25,7 @@
             
             <% if user_signed_in? == false %>
 
-            <ul class="nav navbar-nav navbar-right pull-left">
+            <ul class="nav navbar-nav navbar-right pull-left" id="signin">
                 <li class="nav navbar-link"><%= link_to "Sign up/Login", '#', :class => 'nav navbar-link', data: {toggle: 'modal', target: '#Login'}, :style=>"margin-right:5px;"  %></li>
             </ul>
 
@@ -34,7 +34,7 @@
             <% if user_signed_in? %>
                 <ul class="nav pull-left">
                     <li class="dropdown pull-right">
-                        <a href="#" data-toggle="dropdown" style="background-color:#282B28; color:#F5F3F5; margin-top: 5px;" class="dropdown-toggle">
+                        <a href="#" data-toggle="dropdown" style="background-color:#282B28; color:#F5F3F5;" class="dropdown-toggle">
                         <i class="fa fa-lg fa-user" style="color:#A7C6DA;"></i>
                         <b class="caret"></b>
                         </a>

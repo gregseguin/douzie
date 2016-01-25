@@ -196,9 +196,6 @@ body {
 .navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #F5F3F5}
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #F5F3F5}
 
-
-
-
 .saying {
   background-color: #7F8A83;
   color: #282B28;
@@ -524,4 +521,14 @@ ol {
 
 @media screen and (min-width: 768px) {  
   #login .modal-dialog  {max-width:15vw;}
+}
+
+#signin {
+  
+}
+
+@media(max-width:767px){
+  #signin {
+    margin: 5px 15px 0px 15px !important;
+  }
 }
