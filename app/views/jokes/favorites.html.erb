@@ -1,0 +1,13 @@
+  <% if user_signed_in?  %>
+    <h2><span>Your Favorite Jokes</span></h2>
+      <ol class="circle-list">
+          <% current_user.favorites.each do |joke| %>
+              <%= link_to joke_path(joke) do %>
+              <li>
+                <span class="joketitle"><%= joke.title %></span>
+                <p><%= sanitize joke.saying %></p>
+              </li>
+              <% end %>
+          <% end %>
+       </ol>
+  <% end %>

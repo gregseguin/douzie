@@ -23,6 +23,9 @@ Douzie::Application.routes.draw do
   resources :tags, :path => "funny-jokes"
 
   get 'privacy', :to => 'jokes#privacy'
+  get 'favorites', :to => 'jokes#favorites'
+
+
   
  # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
