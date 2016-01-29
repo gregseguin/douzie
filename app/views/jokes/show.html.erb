@@ -1,5 +1,14 @@
-<!-- Joke categories -->
-<div class="col-sm-12">
+<!-- Back to category -->
+<div class="col-sm-2 col-xs-12">
+	<%= link_to :back do %>
+  		<button type="button" class="btn btn-sample btn-block" aria-label="Left Align">
+  			<i class="fa fa-arrow-circle-left"></i>
+			<span class="badge">back</span>
+		</button>
+	<% end %>
+</div>
+
+<div class="col-sm-2 pull-right hidden-xs">
 	<p>Categories:
 		<% @joke.tags.each do |tag| %>
 			<%= link_to tag.name, tag_path(tag) %>
@@ -7,8 +16,9 @@
 	</p>
 </div>
 
+
 <!-- Joke saying -->
-<div class="col-sm-12 saying">
+<div class="col-sm-12 col-xs-12 saying">
 	<p><%= @joke.saying.html_safe %></p>
 </div>
 
@@ -139,7 +149,3 @@
 <br class="clear" />
 
 
-
-<div class="col-sm-12 text-center">
-	<%= link_to "Back to Jokes List", :back %>
-</div>
