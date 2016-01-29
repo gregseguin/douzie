@@ -39,15 +39,12 @@
                         <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
                             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                         </ul>
                     </li>
                 </ul>
             <% end %>
             
-
-
               <!-- Hamburger icon -->
               <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
                   <span class="sr-only">Toggle navigation</span>
