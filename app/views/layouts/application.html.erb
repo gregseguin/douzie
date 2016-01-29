@@ -33,6 +33,7 @@
 
             <% if user_signed_in? %>
                 <ul class="nav pull-left">
+                    <li class="navbar-text pull-left"><%= current_user.email %></li>
                     <li class="dropdown pull-right">
                         <a href="#" data-toggle="dropdown" style="background-color:#282B28; color:#F5F3F5; margin-top: 5px;" class="dropdown-toggle">
                         <i class="fa fa-lg fa-user" style="color:#A7C6DA;"></i>
